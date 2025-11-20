@@ -13,7 +13,7 @@
 
 header{
   justify-content: space-around;
-  height: 14vh;
+  height: 100px;
   align-items: center;
 }
 
@@ -56,28 +56,30 @@ a {
   display: flex;
 }
 
-.row {
-  height: 41vh;
-  border-top: solid var(--secondary) 1px;
+.row{
+  height: 50%;
+  border-bottom: solid var(--secondary) 1px;
 }
 
 .content {
   width: 76vw;
+  height: 100%;
 }
 
 .joke, .score{
   width: 26vw;
 }
 
-.joke, .cats-fact-day, .score{
+.joke, .facts, .score{
   border-right: solid var(--secondary) 1px;
 }
 
-.cats-fact-day, .score, .used-recently, .games-soon{
+.facts, .score, .used-recently, .games-soon{
   padding: 0 15px 0 15px;
+  margin-top: 1px;
 }
 
-.cats-fact-day, .used-recently{
+.facts, .used-recently{
   width: 38vw;
 }
 
@@ -87,4 +89,10 @@ a {
 
 #game-area, #root {
   justify-content: space-between;
+}
+
+.a-joke {
+  border: solid 1px var(--secondary);
+  margin: 8px;
+  padding: 8px;
 }
