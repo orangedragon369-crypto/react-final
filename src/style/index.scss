@@ -52,7 +52,7 @@ a {
   height: 100%;
 }
 
-.dash-main, header, .row, #root, .game-area{
+.dash-main, header, .row, #root, .game-area, .info-main{
   display: flex;
 }
 
@@ -89,6 +89,12 @@ a {
 
 #game-area, #root {
   justify-content: space-between;
+}
+
+.filed{
+  background-color:  var(--secondary);
+  width: 20vw;
+  padding: 15px;
 }
 
 .a-joke {
