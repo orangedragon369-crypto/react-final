@@ -15,9 +15,6 @@ header{
   justify-content: space-around;
   height: 100px;
   align-items: center;
-}
-
-header, footer {
   background-color: var(--secondary);
 }
 
@@ -29,14 +26,6 @@ body {
   background-color: var(--primary);
   padding: 7px;
   border-radius: 10px;
-}
-
-footer{
-  padding: 2vh;
-}
-
-footer, .joke {
-  text-align: center;
 }
 
 #root{
@@ -91,10 +80,28 @@ a {
   justify-content: space-between;
 }
 
-.info{
+.info-main {
   background-color:  var(--secondary);
-  width: 25vw;
-  padding: 15px;
+  min-height: fit-content;
+}
+
+.data {
+  background-color:  var(--primary);
+  height: 100%;
+  width: 100%;
+}
+
+.info{
+  width: fit-content;
+  padding: 10px;
+}
+
+.tab{
+  width: 90px;
+}
+
+.joke {
+  text-align: center;
 }
 
 .a-joke {
@@ -110,4 +117,9 @@ a {
 
 .closed{
   display: none;
+}
+
+.spaceNeeded{
+  display: flex;
+  flex-flow: wrap;
 }
