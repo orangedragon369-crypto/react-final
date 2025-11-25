@@ -1,6 +1,7 @@
 import "../style/index.css";
 import SectionTab from "./pagePieces/SectionTab";
 import SingleInfoData from "./pagePieces/SingleInfoData.jsx";
+import MonsterTab from "./pagePieces/MonsterTab.jsx";
 
 export default function infoPage(){
     return (
@@ -11,24 +12,28 @@ export default function infoPage(){
                         <SectionTab name="Ailments" id="Ail" parrentId="mhWor" ulContents={
                             <SingleInfoData api="https://mhw-db.com/ailments?p=%7B%22name%22:true%7D" startsId="mhWorAil"/>
                         }/>
-                        <SectionTab name="Areas" id="Are" parrentId="mhWor" ulContents={<>
+                        <SectionTab name="Areas" id="Are" parrentId="mhWor" ulContents={
                             <SingleInfoData api="https://mhw-db.com/locations?p=%7B%22name%22:true%7D" startsId="mhWorAre"/>
-                            </>}/>
+                        }/>
                         <SectionTab name="Armor" id="Arm" parrentId="mhWor" ulContents="sets"/>
-                        <SectionTab name="Charms" id="Cha" parrentId="mhWor" ulContents={<>
+                        <SectionTab name="Charms" id="Cha" parrentId="mhWor" ulContents={
                                 <SingleInfoData api="https://mhw-db.com/charms?p=%7B%22name%22:true%7D" startsId="mhWorCha" split={20}/>
-                            </>}/>
+                        }/>
                         <SectionTab name="Items" id="Ite" parrentId="mhWor" ulContents={<>
-                                <SingleInfoData api="https://mhw-db.com/items?p=%7B%22name%22:true%7D" startsId="mhWorIte" split={20} secondSplit={20}/>
-                            </>}/>
-                        <SectionTab name="Monsters" id="Mon" parrentId="mhWor" ulContents={<>
-                            <SectionTab name="Large" id="Lg" parrentId="mhWorMon" ulContents={<>
-                                <SectionTab name="species" id="sp" parrentId="mhWorMonLg" ulContents="all"/>
-                                </>}/>
-                            <SectionTab name="Small" id="Sm" parrentId="mhWorMon" ulContents="all"/>
-                            <SectionTab name="Endemic" id="Xsm" parrentId="mhWorMon" ulContents="all"/></>
+                            <SectionTab name="1-400" id="1" parrentId="mhWorItm" ulContents={
+                                <SingleInfoData api="https://mhw-db.com/items?limit=400&offset=0&p=%7B%22name%22:true%7D" startsId="mhWorIte" split={20}/>
                             }/>
-                        <SectionTab name="Skills" id="Ski" parrentId="mhWor" ulContents="all"/>
+                            <SectionTab name="401-800" id="401" parrentId="mhWorItm" ulContents={
+                                <SingleInfoData api="https://mhw-db.com/items?limit=400&offset=400&p=%7B%22name%22:true%7D" startsId="mhWorIte" split={20}/>
+                            }/>
+                            <SectionTab name="801-end" id="801" parrentId="mhWorItm" ulContents={
+                                <SingleInfoData api="https://mhw-db.com/items?limit=400&offset=800&p=%7B%22name%22:true%7D" startsId="mhWorIte" split={20}/>
+                            }/>
+                        </>}/>
+                        <MonsterTab />
+                        <SectionTab name="Skills" id="Ski" parrentId="mhWor" ulContents={
+                            <SingleInfoData api="https://mhw-db.com/skills?p=%7B%22name%22:true%7D" startsId="mhWorSki" split={20}/>
+                        }/>
                         <SectionTab name="Weapons" id="Wea" parrentId="mhWor" ulContents="type/tree"/></>
                     }/>
                     {/* <SectionTab name="Wilds" id="Wil" parrentId="mh" ulContents={<>
@@ -38,8 +43,8 @@ export default function infoPage(){
                         <SectionTab name="Items" id="Ite" parrentId="mhWil" ulContents="all"/>
                         <SectionTab name="Monsters" id="Mon" parrentId="mhWil" ulContents="size/species"/>
                         <SectionTab name="Skills" id="Ski" parrentId="mhWil" ulContents="placeable"/>
-                        <SectionTab name="Weapons" id="Wea" parrentId="mhWil" ulContents="type/tree"/></>
-                    }/> */}</>
+                        <SectionTab name="Weapons" id="Wea" parrentId="mhWil" ulContents="type/tree"/>
+                    </>}/> */}</>
                 } />
                 {/* <SectionTab name="Dungeons & Dragons" id="dnd" parrentId="" ulContents="D&D cont"/> */}
             </div>
@@ -48,4 +53,4 @@ export default function infoPage(){
     );
 }
 ``
-//'https://wilds.mhdb.io/en/items?p={"species": true, "name":true}'
+//'https://wilds.mhdb.io/en/mosters?p={"species": true, "name":true}'
