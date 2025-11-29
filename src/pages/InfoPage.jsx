@@ -17,22 +17,14 @@ export default function infoPage(){
                         }/>
                         <SectionTab name="Armor" id="Arm" parrentId="mhWor" ulContents="sets"/>
                         <SectionTab name="Charms" id="Cha" parrentId="mhWor" ulContents={
-                                <SingleInfoData api="https://mhw-db.com/charms?p=%7B%22name%22:true%7D" startsId="mhWorCha" split={20}/>
+                            <SingleInfoData api="https://mhw-db.com/charms?p=%7B%22name%22:true%7D" startsId="mhWorCha" split={20} sort={true}/>
                         }/>
-                        <SectionTab name="Items" id="Ite" parrentId="mhWor" ulContents={<>
-                            <SectionTab name="1-400" id="1" parrentId="mhWorItm" ulContents={
-                                <SingleInfoData api="https://mhw-db.com/items?limit=400&offset=0&p=%7B%22name%22:true%7D" startsId="mhWorIte" split={20}/>
-                            }/>
-                            <SectionTab name="401-800" id="401" parrentId="mhWorItm" ulContents={
-                                <SingleInfoData api="https://mhw-db.com/items?limit=400&offset=400&p=%7B%22name%22:true%7D" startsId="mhWorIte" split={20}/>
-                            }/>
-                            <SectionTab name="801-end" id="801" parrentId="mhWorItm" ulContents={
-                                <SingleInfoData api="https://mhw-db.com/items?limit=400&offset=800&p=%7B%22name%22:true%7D" startsId="mhWorIte" split={20}/>
-                            }/>
-                        </>}/>
+                        <SectionTab name="Items" id="Ite" parrentId="mhWor" ulContents={
+                            <SingleInfoData api="https://mhw-db.com/items?limit=400&offset=0&p=%7B%22name%22:true%7D" startsId="mhWorIte" split={60} sort={true}/>
+                        }/>
                         <MonsterTab />
                         <SectionTab name="Skills" id="Ski" parrentId="mhWor" ulContents={
-                            <SingleInfoData api="https://mhw-db.com/skills?p=%7B%22name%22:true%7D" startsId="mhWorSki" split={20}/>
+                            <SingleInfoData api="https://mhw-db.com/skills?p=%7B%22name%22:true%7D" startsId="mhWorSki" split={20} sort={true}/>
                         }/>
                         <SectionTab name="Weapons" id="Wea" parrentId="mhWor" ulContents="type/tree"/></>
                     }/>
